@@ -24,10 +24,10 @@ def predict():
 
 
 
-# Define a route for the main web page
+
 @app.route('/')
 def index():
-    # Return the HTML for the web page
+    
     return '''
         <html>
 <head>
@@ -185,7 +185,7 @@ def index():
 
 
 
-# Run the app
+
 if __name__ == '__main__':
     app.run()
 app = Flask(__name__, debug=False)
