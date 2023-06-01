@@ -1,10 +1,10 @@
 from transformers import pipeline
 from flask import Flask, request, jsonify
 
-# Load the language model pipeline with top_k=5
+#  language model pipeline with top_k=5
 fill_mask = pipeline('fill-mask', model='xlm-roberta-base', top_k=10)
 
-# Create a Flask app
+#  a Flask app
 app = Flask(__name__)
 
 # Define a route for generating predicted words
