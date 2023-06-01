@@ -7,19 +7,19 @@ fill_mask = pipeline('fill-mask', model='xlm-roberta-base', top_k=10)
 #  a Flask app
 app = Flask(__name__)
 
-# Define a route for generating predicted words
+# route for generating predicted words
 @app.route('/predict', methods=['POST'])
 def predict():
-    # Get the user's input text from the request
+    
     input_text = request.json['text']
 
-    # Generate predicted words using the language model
+ 
     predictions = fill_mask(input_text + '<mask>')
 
-    # Extract the predicted words from the output
+   
     predicted_words = [prediction['token_str'] for prediction in predictions]
 
-    # Return the predicted words as a JSON response
+   
     return jsonify({'predicted_words': predicted_words})
 
 
